@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DISCO: Disentangled Control for Referring Human Dance Generation in Real World">
+  <meta name="keywords" content="DisCo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DISCO: Disentangled Control for Referring Human Dance Generation in Real World</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <style>  
+    table {  
+      font-family: arial, sans-serif;  
+      border-collapse: collapse;  
+      width: 100%;  
+    }  
+      
+    td, th {  
+      border: 2px solid #F1F4F5;  
+      text-align: left;  
+      padding: 8px;  
+    }  
+    tr:nth-child(3n - 1) {  
+      background-color: #F1F4F5;  
+    }  
+
+    tr:nth-child(3n) {  
+      border: 2px solid #FFFFFF;
+    }  
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DisCo: Disentangled Control for <br> Referring Human Dance Generation <br> in Real World</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=wFduC9EAAAAJ">Tan Wang</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=WR875gYAAAAJ">Linjie Li</a><sup>2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=LKSy1kwAAAAJ">Kevin Lin</a><sup>2*</sup>,</span>
+            </span><br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=legkbM0AAAAJ">Chung-Ching Lin</a><sup>2</sup>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=rP02ve8AAAAJ">Zhengyuan Yang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=YG0DFyYAAAAJ">Hanwang Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=bkALdvsAAAAJ">Zicheng Liu</a><sup>2</sup>
+            </span>
+			<span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=cDcWXuIAAAAJ">Lijuan Wang</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Nanyang Technological University,</span>&nbsp;
+            <span class="author-block"><sup>2</sup>Microsoft Azure AI</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2303.13439"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="Placeholder"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="Placeholder"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./static/images/hf.png" alt="Button Image">
+                  </span>
+                  <span>Demo</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/teaser.jpg" style="width:100%;height:540px;">
+      <p class="subtitle has-text-centered" style="font-size: 16px;">
+        We propose <span class="dnerf">DisCo</span> for referring human dance generation, which can generate human dance images/videos with the following three properties: (a) <strong>Faithfulness</strong>: retaining the appearance of foreground (FG) and background (BG) in consistent to the reference image while precisely following the pose; (b) <strong>Generalizability</strong>: generalizable to unseen human subject FG, BG and pose; (c) <strong>Compositionality</strong>: adapting to arbitrary composition of human subject FG, background and pose, each from a different source.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generative AI has made significant strides in computer vision, particularly in image/video synthesis conditioned on text descriptions. Despite the advancements, it remains challenging especially in the generation of human-centric content such as dance synthesis. Existing dance synthesis methods struggle with the gap between synthesized content and real-world dance scenarios. In this paper, we define a new problem setting: Referring Human Dance Generation, which focuses on real-world dance scenarios with three important properties: (i) <strong>Faithfulness</strong>: the synthesis should retain the appearance of both human subject foreground and background from the reference image, and precisely follow the target pose; (ii) <strong>Generalizability</strong>: the model should generalize to unseen human subjects, backgrounds, and poses; (iii) <strong>Compositionality</strong>: it should allow for composition of seen/unseen subjects, backgrounds, and poses from different sources. To address these challenges, we introduce a novel approach, DisCo, which includes a novel model architecture with disentangled control to improve the faithfulness and compositionality of dance synthesis, and an effective human attribute pre-training for better generalizability to unseen humans. Extensive qualitative and quantitative results demonstrate that DisCo can generate high-quality human dance images and videos with diverse appearances and flexible motions.</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
+    <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%">
+      <source src="./static/videos/disco_short_video_projpage_compress.mp4"
+              type="video/mp4">
+    </video>
+
+    <!--/ Paper video.  <span class="dnerf">DisCo<\span> -->
+  </div>
+</section>
+
+
+<section class="section" id="Method">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Method</h2>
+    <section class="hero method">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/method.jpg" style="width:100%;height:100%;">
+          <p>
+		  <strong>(a) Model Architecture with Disentangled Control</strong>: We propose an organic integration of conditions with cross-attention and ControlNet. Specifically, we substitute the text condition in T2I diffusion model with the CLIP image embeddings of the human subject, which is incorporated via the cross-attention modules of U-Net; while the background and human pose conditions are fed into two separate ControlNet branches. By disentangling the control from all three conditions, <span class="dnerf">DisCo</span> can not only achieve fidelity in human foregrounds and backgrounds but also enable arbitrary compositionality of human subjects, backgrounds, and dance-moves.</p>
+		  <p>
+		  <strong>(b) Human Attribute Pre-training</strong>: We design a proxy task in which the model conditions on the separate foreground and background areas and must reconstruct the complete image. In this way, the model learns to better encode-and-decode the complicated human faces and clothes during pre-training, and leaves the pose control learning to the fine-tuning stage of human dance synthesis. Crucially, without the constraint of pairwise human images for pose control, we can leverage large-scale collections of human images to learn diverse human attributes, in turn, greatly improve the generalizability of DISCO to unseen humans.
+
+			<!--/
+            Method overview: Starting from a randomly sampled latent code <span class="math inline">\(x_{T}^{1}\)</span>, we apply <span class="math inline">\(\Delta t\)</span> DDIM backward steps to obtain <span class="math inline">\(x_{T'}^{1}\)</span> using a pre-trained Stable Diffusion model (SD). A specified motion field results for each frame <span class="math inline">\(k\)</span> in a warping function <span class="math inline">\(W_k\)</span> that turns <span class="math inline">\(x_{T'}^{1}\)</span> to <span class="math inline">\(x_{T'}^{k}\)</span>. By enhancing the latent codes with motion dynamics, we determine the global scene and camera motion and achieve temporal consistency in the background and the global scene.
+            A subsequent DDPM forward application delivers latent codes <span class="math inline">\(x_{T}^{k}\)</span> for <span class="math inline">\(k=1,\ldots,m\)</span>. By using the (probabilistic) DDPM method, a greater degree of freedom is achieved with respect to the motion of objects.
+            Finally, the latent codes are passed to our modified SD model using the proposed cross-frame attention, which uses keys and values from the first frame to generate the image of frame <span class="math inline">\(k=1,\ldots,m\)</span>. By using cross-frame attention,  the appearance and the identity of the foreground object are preserved  throughout the sequence. 
+            Optionally, we apply background smoothing. To this end, we employ salient object detection to obtain for each frame <span class="math inline">\(k\) a mask <span class="math inline">\(M^{k}\)</span> indicating the foreground pixels. Finally, for the background (using the mask <span class="math inline">\(M^{k}\)</span>), a convex combination between the latent code <span class="math inline">\(x_{t}^{1}\)</span> of frame one warped to frame <span class="math inline">\(k\)</span> and the latent code <span class="math inline">\(x_{t}^{k}\)</span> is used to further improve the temporal consistency of the background.-->
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="section" id="Results">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Results</h2>
+    <section class="hero method">
+    <div class="container is-max-desktop">
+    <div class="hero-body">  
+	
+	<h3 class="title">Human Image Editing</h3>
+	
+	<!--/
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/human_img_edit.png" style="width:100%;height:100%;">
+	<p class="subtitle has-text-centered" style="font-size: 16px;">
+        Visualizations of 5 representative scenarios for human image editing with our proposed <span class="dnerf">DisCo</span>.
+      </p>-->
+	  
+	<h4 class="title">1. Human Subject/Pose Re-Targeting</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/application1.png" style="width:100%;height:100%;">
+	<p style="margin-bottom: 30px;"></p>
+
+	<h4 class="title">2. Unseen Pose Generation</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/application2.png" style="width:100%;height:100%;">
+	<p style="margin-bottom: 30px;"></p>
+	
+	<h4 class="title">3. Unseen Human Subject Generation</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/application3.png" style="width:100%;height:100%;">
+	<p style="margin-bottom: 30px;"></p>
+	
+	<h4 class="title">4. Unseen Pose & Human Subject Generation</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/application4.png" style="width:100%;height:100%;">
+	<p style="margin-bottom: 30px;"></p>
+	
+	<h4 class="title">5. Full Unseen Composition</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/application5.png" style="width:100%;height:100%;">
+	<p style="margin-bottom: 30px;"></p>
+
+	<p style="margin-bottom: 60px;"></p>
+	<h3 class="title">Human Dance Video Generation</h3>
+    <h4 class="title">1. Same Human - Different Pose</h4>
+    <table class="center">
+	  <tr>
+		<td></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output1_cond.gif" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output2_cond.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output3_cond.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output4_cond.gif" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output5_cond.gif" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/ref.png" style="width: 80%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output1.gif" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output2.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output3.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output4.gif" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/singleattr_multipose/output5.gif" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="text-align:center;">Reference Img</td>
+	    <td style="text-align:center;">Dance#1</td>
+        <td style="text-align:center;">Dance#2</td>
+        <td style="text-align:center;">Dance#3</td>
+        <td style="text-align:center;">Dance#4</td>
+        <td style="text-align:center;">Dance#5</td>
+      </tr>
+	  </table> 
+	  
+	  <p style="margin-bottom: 60px;"></p>
+	  <h4 class="title">2. Different Human - Same Pose</h4>
+	  <table class="center">
+	  <tr>
+		<td></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref1.png" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref2.png" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref3.png" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref4.png" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref5.png" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output_cond.gif" style="width: 95%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output1.gif" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output2.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output3.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output4.gif" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output5.gif" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="text-align:center;">Target Pose</td>
+	    <td style="text-align:center;">Dance#1</td>
+        <td style="text-align:center;">Dance#2</td>
+        <td style="text-align:center;">Dance#3</td>
+        <td style="text-align:center;">Dance#4</td>
+        <td style="text-align:center;">Dance#5</td>
+      </tr>
+	  </table> 
+	  
+	  
+	  <p style="margin-bottom: 60px;"></p>
+	  <h4 class="title">3. Human-Specific Fine-tuning</h4>
+    <table class="center">
+	  <tr>
+		<td></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output1_cond.gif" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/anime/output2_cond.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output3_cond.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output4_cond.gif" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/anime/output5_cond.gif" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="width: 150px; text-align: center;"><img src="./static/gifs/anime/ref.png" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output1.gif" style="width: 85%;"></td>
+		<td style="text-align: center;"><img src="./static/gifs/anime/output2.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output3.gif" style="width: 85%;"></td>
+        <td style="text-align: center;"><img src="./static/gifs/anime/output4.gif" style="width: 85%;"></td>              
+        <td style="text-align: center;"><img src="./static/gifs/anime/output5.gif" style="width: 85%;"></td>
+      </tr>
+      <tr>
+		<td style="text-align:center;">Reference Img</td>
+	    <td style="text-align:center;">Dance#1</td>
+        <td style="text-align:center;">Dance#2</td>
+        <td style="text-align:center;">Dance#3</td>
+        <td style="text-align:center;">Dance#4</td>
+        <td style="text-align:center;">Dance#5</td>
+      </tr>
+	  </table> 
+  </div></div></section>
+  </div>
+</section>
+
+
+<section class="section" id='RelatedLinks'>
+  <div class="container is-max-desktop content">
+    <h2 class="title">Related Links</h2>
+
+    <ul>
+      <li><a href="https://ommer-lab.com/research/latent-diffusion-models/"> High-Resolution Image Synthesis with Latent Diffusion Models (a.k.a. LDM & Stable Diffusion)</a></li>
+      <li><a href="https://grail.cs.washington.edu/projects/dreampose"> DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion</a></li>
+      <li><a href="https://github.com/lllyasviel/ControlNet"> Adding Conditional Control to Text-to-Image Diffusion Models (a.k.a ControlNet)</a></li>
+    </ul>
+    <!-- <div class="content has-text-justified">
+      <p>
+        There's a lot of excellent work that was introduced around the same time as ours.
+      </p>
+      <p>
+        <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+      </p>
+      <p>
+        <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+        both use deformation fields to model non-rigid scenes.
+      </p>
+      <p>
+        Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+      </p>
+      <p>
+        There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+      </p>
+    </div> -->
+  </div></section>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p> If you use our work in your research, please cite our publication: </p>
+    <pre><code>@article{text2video-zero,
+    title={Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators},
+    author={Khachatryan, Levon and Movsisyan, Andranik and Tadevosyan, Vahram and Henschel, Roberto and Wang, Zhangyang and Navasardyan, Shant and Shi, Humphrey},
+    journal={arXiv preprint arXiv:2303.13439},
+    year={2023}
+  }
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf"> -->
+      <a class="icon-link" href="Placeholder">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled> -->
+      <a class="icon-link" href="Placeholder" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
