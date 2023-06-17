@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
+  <link rel="icon" href="./static/images/ms_icon.png">
 
   <style>  
     table {  
@@ -116,7 +116,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2303.13439"
+                <a href="https://disco-dance.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -306,36 +306,14 @@
       </tr>
 	  </table> 
 	  
+	  
 	  <p style="margin-bottom: 60px;"></p>
 	  <h4 class="title">2. Different Human - Same Pose</h4>
-	  <table class="center">
-	  <tr>
-		<td></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref1.png" style="width: 85%;"></td>
-		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref2.png" style="width: 85%;"></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref3.png" style="width: 85%;"></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref4.png" style="width: 85%;"></td>              
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/ref5.png" style="width: 85%;"></td>
-      </tr>
-      <tr>
-		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output_cond.gif" style="width: 95%;"></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output1.gif" style="width: 85%;"></td>
-		<td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output2.gif" style="width: 85%;"></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output3.gif" style="width: 85%;"></td>
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output4.gif" style="width: 85%;"></td>              
-        <td style="text-align: center;"><img src="./static/gifs/singlepose_multiattr/output5.gif" style="width: 85%;"></td>
-      </tr>
-      <tr>
-		<td style="text-align:center;">Target Pose</td>
-	    <td style="text-align:center;">Dance#1</td>
-        <td style="text-align:center;">Dance#2</td>
-        <td style="text-align:center;">Dance#3</td>
-        <td style="text-align:center;">Dance#4</td>
-        <td style="text-align:center;">Dance#5</td>
-      </tr>
-	  </table> 
 	  
-	  
+	<img id="method" autoplay muted loop playsinline height="110%" src="./static/gifs/singlepose_multiattr/ft2.gif" style="width:110%;height:110%;">
+	<p style="margin-bottom: 30px;"></p>
+	
+	
 	  <p style="margin-bottom: 60px;"></p>
 	  <h4 class="title">3. Human-Specific Fine-tuning</h4>
     <table class="center">
@@ -404,11 +382,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <p> If you use our work in your research, please cite our publication: </p>
-    <pre><code>@article{text2video-zero,
-    title={Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators},
-    author={Khachatryan, Levon and Movsisyan, Andranik and Tadevosyan, Vahram and Henschel, Roberto and Wang, Zhangyang and Navasardyan, Shant and Shi, Humphrey},
-    journal={arXiv preprint arXiv:2303.13439},
+    <p> If you use our work in your research, please cite: </p>
+    <pre><code>@article{disco,
+    title={DisCo: Disentangled Control for Referring Human Dance Generation in Real World},
+    author={Wang, Tan and Li, Linjie and Lin, Kevin and Lin, Chung-Ching and Yang, Zhengyuan and Liu, Zicheng and Wang, Lijuan},
+    website={https://disco-dance.github.io/},
     year={2023}
   }
     </code></pre>
