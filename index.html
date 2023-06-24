@@ -347,6 +347,30 @@
 </section>
 
 
+<section class="section" id="Compare to Recent Work (DreamPose)">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Compare to Recent Work (<a href=https://grail.cs.washington.edu/projects/dreampose>DreamPose</a>)</h2>
+    <section class="hero method">
+    <div class="container is-max-desktop">
+    <div class="hero-body">  
+	
+	<h3 class="title">Qualitative Compare</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/qualitative_compare.png" style="width:100%;height:100%;">
+	 <p class="subtitle has-text-centered" style="font-size: 16px;">
+		Qualitative comparison between our DISCO (w/ or w/o HAP) and <a href=https://grail.cs.washington.edu/projects/dreampose>DreamPose</a> on referring human dance video generation with the input of a reference image and a sequence of target poses. Note that the reference image and target poses are from the testing split, where the human subjects, backgrounds, poses are not available during the model training.
+      </p>
+	<p style="margin-bottom: 50px;"></p>
+	
+	<h3 class="title">Quantitative Compare</h4>
+	<img id="method" autoplay muted loop playsinline height="100%" src="./static/images/quantitative_compare.png" style="width:100%;height:100%;">
+	<p class="subtitle has-text-centered" style="font-size: 16px;">
+		Quantitative comparisons of DISCO with the recent SOTA method <a href=https://grail.cs.washington.edu/projects/dreampose>DreamPose</a>. “CFG” and “HAP” denote classifier-free guidance and human attribute pre-training, respectively. ↓ indicates the lower the better, and vice versa. For DISCO†, we further scale up the fine-tuning stage to ~600 TikTok-style videos.
+     </p>
+  </div></section>
+  </div>
+</section>	
+	
+	
 <section class="section" id='RelatedLinks'>
   <div class="container is-max-desktop content">
     <h2 class="title">Related Links</h2>
@@ -356,29 +380,15 @@
       <li><a href="https://grail.cs.washington.edu/projects/dreampose"> DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion</a></li>
       <li><a href="https://github.com/lllyasviel/ControlNet"> Adding Conditional Control to Text-to-Image Diffusion Models (a.k.a ControlNet)</a></li>
     </ul>
-    <!-- <div class="content has-text-justified">
-      <p>
-        There's a lot of excellent work that was introduced around the same time as ours.
-      </p>
-      <p>
-        <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-      </p>
-      <p>
-        <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-        both use deformation fields to model non-rigid scenes.
-      </p>
-      <p>
-        Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-      </p>
-      <p>
-        There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-      </p>
-    </div> -->
+
   </div></section>
   </div>
 </section>
 
 
+
+	
+	
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
