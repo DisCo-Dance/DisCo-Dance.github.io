@@ -1,0 +1,9 @@
+Compared to existing works, our DisCo achieves:
+
+1. Generalizability to a large-scale real-world human without human-specific fine-tuning (we also support human-specific fine-tuning if you want). Previous methods only support generation for a specific domain of human, e.g., DreamPose only generate fashion model with easy catwalk pose.
+
+2. Current SOTA results for referring human dance generation.
+
+3. Extensive usage cases and applications (see project page for more details).
+
+4. An easy-to-follow framework, supporting efficient training (x-formers, FP16 training, deepspeed, wandb) and a wide range of possible research directions (pre-training -> fine-tuning -> human-specific fine-tuning).
